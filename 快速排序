@@ -1,0 +1,56 @@
+	public static void QuickSort(int[] n, int low, int hight) {
+		if (low < hight) {
+			int x = getNum(n, low, hight);
+			QuickSort(n, low, x-1);
+			QuickSort(n, x+1, hight);
+		}
+	}
+	//非递归实现快排；
+	public static void QuickSort1(int[] n, int low, int hight) {
+		Stack<Integer> st = new Stack<Integer>();
+		st.push(low);
+		st.push(hight);
+		while (!st.empty()) {
+			hight = st.pop();
+			low = st.pop();
+			int x = getNum(n, low, hight);
+			if(x - 1 > low){
+				st.push(low);
+				st.push(x - 1);
+			}
+			if(x + 1 < hight){
+				st.push(x + 1);
+				st.push(hight);
+			}
+			
+		}
+	}
+
+	public static int getNum(int[] nums, int left, int right) {
+//		int temp = n[low];
+//		while (low < hight) {
+//			while (low < hight && n[hight] >= temp) {
+//				hight--;
+//			}
+//			n[low] = n[hight];
+//			while (low < hight && n[low] <= temp) {
+//				low++;
+//			}
+//			n[hight] = n[low];
+//		}
+//		n[low] = temp;
+//		return low;
+        int temp = nums[left];
+        while(left < right){
+            while(left < right && nums[right] >= temp){
+                right--;
+            }
+            nums[left] = nums[right];
+            while(left < right && nums[left] <= temp){
+                left++;
+            }
+            nums[right] = nums[left];
+        }
+        nums[left] = temp;
+        return left;
+	}
