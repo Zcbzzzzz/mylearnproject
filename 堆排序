@@ -1,0 +1,34 @@
+	
+  //初始化大根堆
+  for(int i = a.length / 2;i >= 0;i--){
+     getBigRoot(a,i,a.length);
+  }
+  //交换头尾节点值，并调整剩下的数组
+  for(int i = a.length - 1;i > 0;i--){
+			swap(a,0,i);
+			getBigRoot(a,0,i);
+	}
+  //构建大根堆
+  public static void getBigRoot(int[] a,int parsent,int right){
+		int temp = a[parsent];
+		int lchild = parsent * 2 + 1;//左孩子;
+		int rchild = parsent * 2 + 2;//右孩子
+		int largest = parsent;
+		if(lchild < right && a[lchild] > a[largest]){
+			largest = lchild;
+		}
+		if(rchild < right && a[rchild] > a[largest]){
+			largest = rchild;
+		}
+		if(largest != parsent){
+		    swap(a,parsent,largest);
+        //对子节点继续调整
+		    getBigRoot(a,largest,right);
+		}
+	}
+	
+    public static void swap(int[] a,int i,int j){
+    	int temp = a[i];
+    	a[i] = a[j];
+    	a[j] = temp;
+    }
