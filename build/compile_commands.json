@@ -1,0 +1,7 @@
+[
+{
+  "directory": "/zcb/mylearnproject/build",
+  "command": "/usr/bin/x86_64-redhat-linux-g++   -g -std=gnu++11 -o CMakeFiles/test.dir/src/test.cpp.o -c /zcb/mylearnproject/src/test.cpp",
+  "file": "/zcb/mylearnproject/src/test.cpp"
+}
+]

@@ -1,0 +1,3 @@
+/zcb/mylearnproject/build/CMakeFiles/test.dir
+/zcb/mylearnproject/build/CMakeFiles/edit_cache.dir
+/zcb/mylearnproject/build/CMakeFiles/rebuild_cache.dir
